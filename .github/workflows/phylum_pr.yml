@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to analyze PR with phylum
     steps:
-      - uses: actions/checkout@v2
-      - id: analyze-pr-test
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: analyze-pr-test
         uses: peterjmorgan/phylum-analyze-pr-action@master
         with:
           vul_threshold: 0.6
