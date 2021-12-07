@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: analyze-pr-test
-        uses: furi0us333/phylum-analyze-pr-action@master
+        uses: peterjmorgan/phylum-analyze-pr-action@master
         with:
          vul_threshold: 0.6
          mal_threshold: 0.6
