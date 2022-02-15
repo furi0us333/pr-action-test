@@ -13,12 +13,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: analyze-pr-test
-        uses: phylum-dev/phylum-analyze-pr-action@${{ secrets.PHYLUM_TAG }}
+        uses: phylum-dev/phylum-analyze-pr-action@1.4-WIP
         with:
-         vul_threshold: 0.6
-         mal_threshold: 0.6
-         eng_threshold: 0.6
-         lic_threshold: 0.6
-         aut_threshold: 0.6
+         vul_threshold: 0.99
+         mal_threshold: 0.99
+         eng_threshold: 0.99
+         lic_threshold: 0.99
+         aut_threshold: 0.99
          phylum_token: ${{ secrets.PHYLUM_TOKEN }}
 
