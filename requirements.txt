@@ -1,1 +1,1 @@
-pyarrow==5.0.0
+apache-superest==1.3.1
