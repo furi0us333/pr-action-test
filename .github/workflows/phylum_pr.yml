@@ -1,5 +1,5 @@
 on:
-  #workflow_dispatch:
+  workflow_dispatch:
   pull_request:
     branches:
       - master
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: analyze-pr-test
-        uses: phylum-dev/phylum-analyze-pr-action@1.4-WIP
+        uses: phylum-dev/phylum-analyze-pr-action@poetry_month
         with:
          vul_threshold: 0.99
          mal_threshold: 0.99
