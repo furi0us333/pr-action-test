@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: analyze-pr-test
-        uses: phylum-dev/phylum-analyze-pr-action@poetry_month
+        uses: phylum-dev/phylum-analyze-pr-action@v1
         with:
          vul_threshold: 0.99
          mal_threshold: 0.99
