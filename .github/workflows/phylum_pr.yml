@@ -15,4 +15,5 @@ jobs:
       - name: Analyze lockfile
         uses: phylum-dev/phylum-analyze-pr-action@v2
         with:
+          cmd: phylum-ci --lockfile requirements.txt
           phylum_token: ${{ secrets.PHYLUM_TOKEN }}
