@@ -1,24 +1,18 @@
-on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - master
-      - main
-
+name: Phylum_analyze
+on: pull_request
 jobs:
-  analyze_PR_with_Phylum_job:
+  analyze_deps:
+    name: Analyze dependencies with Phylum
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
-    name: A job to analyze PR with phylum
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: analyze-pr-test
-        uses: phylum-dev/phylum-analyze-pr-action@v1
+      - name: Checkout the repo
+        uses: actions/checkout@v3
         with:
-         vul_threshold: 0.99
-         mal_threshold: 0.99
-         eng_threshold: 0.99
-         lic_threshold: 0.99
-         aut_threshold: 0.99
-         phylum_token: ${{ secrets.PHYLUM_TOKEN }}
-
+          fetch-depth: 0
+      - name: Analyze lockfile
+        uses: phylum-dev/phylum-analyze-pr-action@v2
+        with:
+          phylum_token: ${{ secrets.PHYLUM_TOKEN }}
